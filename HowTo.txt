@@ -1,0 +1,37 @@
+RUN GITBASH:
+
+-> nastartovat ssh agent
+eval $(ssh-agent -s)
+
+
+-> ak chces robit s firemnym githubom, pridaj do agenta svoj SSH kluc:
+ssh-add /c/Users/i336190/.ssh/id_rsa
+
+
+-> ak ches robit s sukromnym githubom, pridaj do agenta svoj SSH kluc:
+ssh-add /c/Users/i336190/.ssh/github_rsa
+
+-> cesta k repozitaru na lokali
+cd /c/Users/i336190/'OneDrive - SAP SE'/Documents/GitHub/WebDevelopment
+
+
+-> Po nejakej zmene:
+-> prehlad zmien
+git status
+
+-> pridam si iba tie ktore ma zaujimaju alebo vsetky
+git add --all
+git add <uplna cesta k suboru>
+
+-> pridanie commit message
+git commit -m "<message>"
+
+-> posunutie vsetkych kommitovanych zmien do master branch upstream remotu
+git push upstream master
+
+public repozitar: https://github.com/martino1961/WebDevelopment
+
+
+
+-> ak by si chcel si k sebe stiahnut zmeny z githubu
+git pull upstream master
