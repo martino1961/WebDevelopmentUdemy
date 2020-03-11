@@ -6,3 +6,9 @@ h1 {
   img {
     background-color: red;
 } 
+
+p {
+    background-color: aquamarine;
+    color: blue;
+    font-size: 30px;
+}
