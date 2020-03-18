@@ -3,10 +3,21 @@ body {
     margin-top: 0;
     margin: 0;
     text-align: center;
+    /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font-family: 'Merriweather', serif; /*embedded font from https://fonts.google.com */
 }
 
 h1 {
     margin: 0 auto;
+    font-family: 'Sacramento', cursive;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
 }
 
 .top-container {
