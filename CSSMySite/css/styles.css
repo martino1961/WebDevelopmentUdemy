@@ -5,10 +5,12 @@ body {
     text-align: center;
     /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
     font-family: 'Merriweather', serif; /*embedded font from https://fonts.google.com */
+    font-size: 200%;
 }
 
 h1 {
-     font-size: 5.625em; /* 16px = 100% = 1em (1em = width of M), 90px = 5.625em  */
+    /* 'rem' means font-size is not inherited from parent (it is relative to the tag, where it is defined*/
+     font-size: 5.625rem; /* 16px = 100% = 1em (1em = width of M), 90px = 5.625em  */
     /* font-size: 562.5%; */
     /* font-size: 90px; */
     margin: 0 auto;
