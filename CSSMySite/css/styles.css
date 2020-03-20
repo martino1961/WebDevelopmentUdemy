@@ -19,6 +19,8 @@ h1 {
 
 h2 {
     font-family: 'Montserrat', sans-serif;
+    /* set font-size to 40px: 1em = 16px --> 40/16 = 2.5 rem */
+    font-size: 2.5rem;
 }
 
 h3 {
