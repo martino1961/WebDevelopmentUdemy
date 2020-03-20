@@ -13,7 +13,10 @@ h1 {
     /* font-size: 90px; */
     /* 'rem' means font-size is not inherited from parent (it is relative to the tag, where it is defined*/
     font-size: 5.625rem; /* 16px = 100% = 1em (1em = width of M), 90px = 5.625em  */
-    margin-top: 50px; /* better to use static (px) scale (em/rem = dynamic scale*/
+    
+    /*margin-top: 50px; /* better to use static (px) scale (em/rem = dynamic scale*/
+    /* change padding between <h1> and <h2> --> margin-top --> margin: top, right, bottom, left */
+    margin: 50px auto 0 auto; 
     font-family: 'Sacramento', cursive;
 }
 
