@@ -4,12 +4,6 @@ body {
     text-align: center;
 }
 
-/* Containers */
-
-.container-fluid {
-    padding: 7% 15%;
-}
-
 h1, h2, h3, h4, h5, h6 {
     font-family: "Montserrat-Bold";
 }
@@ -29,6 +23,25 @@ p {
 .section-heading {
     font-size: 3rem;
     line-height: 1.5;
+}
+
+/* Containers */
+
+.container-fluid {
+    padding: 7% 15%;
+}
+
+/* Sections  */
+
+.colored-section {
+    background-color: #ff4c68;
+    color: white;
+
+}
+
+.white-section {
+    background-color: white;
+   
 }
 
 /* Navigation Bar */
@@ -60,17 +73,11 @@ p {
 
 /* Title Section  */
 
-#title {
-    background-color: #ff4c68;
-    color: white;
-    text-align: left;
-}
-
 /* Set padding for Class "container-fluid" which is inside Section with id="title" */
 #title .container-fluid {
     padding: 3% 15% 7%;
+    text-align: left;
 }
-
 
 /* Title Image */
 
@@ -84,7 +91,6 @@ p {
 /* Features Section */
 
 #features {
-    background-color: white;
     position: relative;
 }
 
@@ -107,6 +113,9 @@ p {
 
   /* Testimonial Section */
 
+/* Hierarchy: Id (#), class (.), tag (<>) */
+/* Id (#) is the most important in the hierarchy, */
+/* so #testimonials overrides colors defined by class .colored-section */ 
 #testimonials {
     background-color: #ef8172;
     color: white;
@@ -122,6 +131,8 @@ p {
     border-radius: 100%;  /* Circle around picture */
     margin: 20px;
 }
+
+/* Press Section  */
 
 #press {
     background-color: #ef8172;
@@ -156,12 +167,6 @@ p {
 
 
 /* CTA Section  */
-
-#cta {
-    background-color: #ff4c68;
-    color: white;
-}
-
 
 /* Footer Section  */
 
