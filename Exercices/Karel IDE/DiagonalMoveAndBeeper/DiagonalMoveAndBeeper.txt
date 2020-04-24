@@ -1,0 +1,44 @@
+/**
+ * Welcome to the Stanford Karel IDE.
+ **/
+function main(){  
+   putBeeper();
+   
+   //my code 
+   diagonalMoveAndBeeper4Times();
+
+/** Angela's code
+//   angelaDiagonalMoveAndBeeper();
+//   angelaDiagonalMoveAndBeeper();
+//   angelaDiagonalMoveAndBeeper();
+//   angelaDiagonalMoveAndBeeper(); */
+}
+
+function moveDiagonal() {
+  move();
+  turnLeft();
+  move();
+}
+
+function diagonalMoveAndBeeper() {
+    moveDiagonal();
+    putBeeper();
+    turnRight();
+}
+
+function diagonalMoveAndBeeper4Times() {
+   diagonalMoveAndBeeper();
+   diagonalMoveAndBeeper();
+   diagonalMoveAndBeeper();
+   diagonalMoveAndBeeper();
+}
+
+function angelaDiagonalMoveAndBeeper() {
+   move();
+   turnLeft();
+   move();
+   putBeeper();
+   turnRight();
+}   
+
+

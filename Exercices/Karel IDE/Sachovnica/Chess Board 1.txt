@@ -1,0 +1,95 @@
+/**
+ * Welcome to the Stanford Karel IDE.
+ * Chess Board vers.1
+ **/
+function main(){ 
+   /** Diagonal (1,1) --> (5,5) */
+   putBeeper();
+   
+   diagonalMoveAndBeeper();
+   diagonalMoveAndBeeper();
+   diagonalMoveAndBeeper();
+   diagonalMoveAndBeeper();
+   
+   // Karel is in direction to Top
+   turnRight();
+   move4Steps();  //to the Bottom Right Corner
+
+   turnRight();
+   move2Steps();
+
+  
+  /** Diagonal (3,1) --> (5,3) */
+   putBeeper();
+   turnBack();
+    
+   diagonalMoveAndBeeper();
+   diagonalMoveAndBeeper();
+
+   // Karel is in direction to Top
+   turnRight();
+   move2Steps(); //to the Bottom Right Corner
+   
+   /** Beeper in Bottom Right (5,1) */
+   putBeeper();
+   
+   /** Move to Bottom Left: (5,1) --> (1,1) */
+   turnRight();
+   move4Steps();
+   
+   /** Move to (1,3) */
+   turnRight();
+   move2Steps();
+   
+   putBeeper();
+  /** Diagonal (1,3) --> (3,5) */
+   turnRight();
+   diagonalMoveAndBeeper();
+   diagonalMoveAndBeeper();
+   
+   /** Move to Top Left Corner (3,5) --> (1,5) */
+   turnBack();
+   move2Steps();
+   putBeeper();
+   
+   /** Move Back to Bottom Left */
+   turnLeft();
+   move4Steps();
+   turnLeft();
+   
+}
+
+function moveDiagonal() {
+  move();
+  turnLeft();
+  move();
+}
+
+function diagonalMoveAndBeeper() {
+    moveDiagonal();
+    putBeeper();
+    turnRight();
+}
+
+function diagonalMoveAndBeeper4Times() {
+   diagonalMoveAndBeeper();
+   diagonalMoveAndBeeper();
+   diagonalMoveAndBeeper();
+   diagonalMoveAndBeeper();
+}
+
+function move4Steps() {
+  move();  
+  move();  
+  move();  
+  move();
+}
+
+function move2Steps() {
+  move();  
+  move();  
+}
+function turnBack() {
+  turnLeft();
+  turnLeft();
+}
