@@ -3,8 +3,7 @@ var year = prompt("Year: ");
 
 if (year <= 1581) {
     alert("Year " + year + " must be greater than 1581!!!");
-} 
-else { 
+} else { 
 if (! (isCleanlyDivisible(year, 4))) {
     // Not Dividible by 4 --> Not Leap
    isNotLeapYear(year);
@@ -21,11 +20,7 @@ if (! (isCleanlyDivisible(year, 4))) {
 }
 
 function isCleanlyDivisible(number, divBy) {
-    if((number % divBy ) === 0) {
-        return(true);
-    } else {
-        return(false);
-    }  
+  return(((number % divBy ) === 0));
 }
 
 function isLeapYear(year) {
