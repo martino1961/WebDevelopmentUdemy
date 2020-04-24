@@ -3,7 +3,7 @@ var myName = prompt("My Name: ");
 var yourName = prompt("Your Name: ");
 
 //Math.random() - gives random number in range <0; 0,99999999999999>
-var lovePerc = Math.random();
+var lovePerc = Math.random()*100;
 // whole number (wo decimal part) --> <0; 99>
 lovePerc = Math.floor(lovePerc);
 // <1; 100>
