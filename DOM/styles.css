@@ -1,3 +1,16 @@
-h1 {
+
+
+/* Class 'huge' is not present in HTML, but the style for it is defined here in CSS */
+/* applying 'huge' style of <h1> via JS: */
+/* 1) document.querySelector("h1").classList.add("huge"); */
+/*  --> added class 'huge' to <h1> */
+/*  --> huge style was applied */
+/* 2) Toggle 'huge' style On/Off: */
+/*    document.querySelector("h1").classList.toggle("huge"); */
+/*    document.querySelector("h1").classList.toggle("huge"); */
+
+.huge {
+  font-size: 10rem;
   color: red;
+  font-weight: bold;
 }
