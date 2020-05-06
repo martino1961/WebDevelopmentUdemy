@@ -17,6 +17,8 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
 
     makeSound(buttonInnerHTML);
 
+    buttonAnimation(buttonInnerHTML);
+
   });
 }
 
@@ -24,6 +26,8 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
 document.addEventListener("keydown", function(event) {
  
     makeSound(event.key);
+
+    buttonAnimation(event.key);
 
 })
 
@@ -69,4 +73,15 @@ function makeSound(key) {
             console.log(key);
             break;
     }
+}
+
+function buttonAnimation(currentKey) {
+    
+    //currentKey is the name of class --> querySelector(".class")
+    //                                --> concatenate "." and currentKey
+    var activeButton = document.querySelector("." + currentKey);
+
+    //HTML:  <button class="w drum">w</button>
+    // add class "pressed" to button
+    activeButton.classList.add("pressed");
 }
