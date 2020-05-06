@@ -97,6 +97,6 @@ function buttonAnimation(currentKey) {
     setTimeout(function() {
         //Anonymous function
        activeButton.classList.remove("pressed"); 
-    }, 250); //Timeout in msec
+    }, 150); //Timeout in msec
 
 }
