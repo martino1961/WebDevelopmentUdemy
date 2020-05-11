@@ -12,7 +12,13 @@
 $("h1").addClass("big-title margin-50");
 
 //Check if Element has Class
-console.log($("h1").hasClass("margin-50"));  //.hasClass retruns true/false
+//console.log($("h1").hasClass("margin-50"));  //.hasClass retruns true/false
+$("h1").text("Bye!!!");
 
-$("button");   //document.querySelectorAll("button");
+//document.querySelectorAll("button");
+//Set text "Don't Click Me!"  to all buttons
+$("button").text("Don't Click Me!");   
+
+//document.querySelector("button").innerHTML --> $("button").html
+$("button").html("<em>Hey</em>");
 
