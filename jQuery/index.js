@@ -22,3 +22,8 @@ $("button").text("Don't Click Me!");
 //document.querySelector("button").innerHTML --> $("button").html
 $("button").html("<em>Hey</em>");
 
+//Get Attribute value of <img>
+console.log($("img").attr("src"));
+
+//Set Attribute value
+$("a").attr("href", "https://www.yahoo.com");
