@@ -21,6 +21,18 @@
 // });
 
 //jQuery: Key pressed
-$("input").keydown(function(event) {
-    console.log(event.key);
-});
+// $("input").keydown(function(event) {
+//     console.log(event.key);
+// });
+
+// Challenge: Show pressed key in <h1>
+//Solution 1: $("body") - with jQuery method '.html':
+// $("body").keydown(function(event) {
+//     $("h1").html(event.key);
+// })
+
+// Challenge: Show pressed key in <h1>
+//Solution 2: $(document) - with jQuery method '.text':
+$(document).keydown(function(event) {
+    $("h1").text(event.key);
+})
