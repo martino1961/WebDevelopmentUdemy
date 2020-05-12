@@ -11,6 +11,16 @@
 // }
 
 //jQuery: Change Color of <h1> by Click of whichever of 5 buttons
-$("button").click(function() {
-    $("h1").css("color", "purple");
-})
+// $("button").click(function() {
+//     $("h1").css("color", "purple");
+// })
+
+//JS: Key pressed
+// document.querySelector("input").addEventListener("keydown", function(event) {
+//     console.log(event.key);
+// });
+
+//jQuery: Key pressed
+$("input").keydown(function(event) {
+    console.log(event.key);
+});
