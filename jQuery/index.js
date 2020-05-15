@@ -1,20 +1,61 @@
-//jQ 193: Adding and Removing Elements with jQuery
+// jQ 194: Website Animations with jQuery
+//
+// to run the WebSite successfully:
+//   - only one block can be uncommented
+//   - other blocks must be commented (otherwise only the last block is effective)
 
-//Add button Before <h1> - method .before()
-//  HTML: <button>Before h1</button><h1>Hello</h1>
-$("h1").before("<button>Before h1</button>");
+// Hide / Show selected Element
+$("button").on("click", function() {
+    $("h1").hide();  //to Show: .show()
+});
 
-//Add button After <h1> - method .after()
-//HTML: <h1>Hello</h1><button>After h1</button>
-$("h1").after("<button>After h1</button>");
+// Toggle (Hide / Show)
+$("button").on("click", function() {
+    $("h1").toggle(); 
+});
 
-//Add button Before Content in <h1> - method .prepend()
-//HTML: <h1><button>Prepend h1</button>Hello</h1>
-$("h1").prepend("<button>Prepend h1</button>");
+// Fade Out - Slowly dissappeared
+$("button").on("click", function() {
+    $("h1").fadeOut(); 
+});
 
-//Add button After Content in <h1> - method .append()
-//HTML: <h1>Hello<button>Append h1</button></h1>
-$("h1").append("<button>Append h1</button>");
+// Fade In - Slowly appeared
+$("button").on("click", function() {
+    $("h1").fadeIn(); 
+});
 
-//Remove all buttons - method .remove()
-$("button").remove();
+// Fade Toggle
+$("button").on("click", function() {
+    $("h1").fadeToggle(); 
+});
+
+// SlideUp
+$("button").on("click", function() {
+    $("h1").slideUp(); 
+});
+
+// SlideDown
+$("button").on("click", function() {
+    $("h1").slideDown(); 
+});
+
+// SlideToggle
+$("button").on("click", function() {
+    $("h1").slideToggle(); 
+});
+
+// Animation - meth .animate() 
+//  - works ONLY with Numerical Attributes
+//  - e.g. .animate(color: red) - Doesn't work
+$("button").on("click", function() {
+   /* 
+      $("h1").animate({opacity: 0.5}); //text will be 50% lighter
+      $("h1").animate({margin: 20});     //Margin 20px
+   */ 
+      $("h1").animate({margin: "20%"});      //Margin - % must be in ""
+});
+
+// More Actions for 1 Element - Chain methods together and separate by "."
+$("button").on("click", function() {
+    $("h1").slideUp().slideDown().animate({opacity: 0.5});
+});
