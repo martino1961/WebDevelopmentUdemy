@@ -4,6 +4,7 @@
 //SG3: JS - Step 3 - Show the Sequence to the User with Animations and Sounds
 //SG4: JS - Step 4 - Check Which Button is Pressed
 //SG5: JS - Step 5 - Add Sounds to Button Clicks
+//SG6: JS - Step 6 - Add Animations to User Clicks
 
 
 //SG Step 2 (SG2) - Create a New patern
@@ -54,5 +55,17 @@ $(".btn").click(function() {
      audio.play();
  } 
 
+ //SG6.1 Create new function animatePress()
+ function animatePress(currentColor) {
+     //SG6.2 Add "pressed" class to the clicked button
+     //Clicked button is selected via id 
+     //  --> see HTML - e.g. <div type="button" id="green" class="btn green">
+     $("#" + currentColor).addClass("pressed");
+
+     //SG6.3 Remove "pressed" class after 100 msec (see Google/Stackoverflow)
+     setTimeout(function() {
+        $("#" + currentColor).removeClass("pressed");
+     }, 100);
+ }
 
 
