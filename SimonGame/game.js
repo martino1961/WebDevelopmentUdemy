@@ -19,4 +19,11 @@ function nextSequence() {
   //SG2.6 Add the new randomChosenColour to the end of the gamePattern[]
   gamePattern.push(randomChosenColour);
 
+  //SG3.1 Use jQuery to select the button with the same id as the randomChosenColour
+  //SG3.2 Animate the selected button with flash (see Google/StackOverlow)
+  $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
+  //SG3.3 Play sound of the selected button
+  var audio = new Audio("sounds/" + randomChosenColour + ".mp3");
+  audio.play();
+  
 }
