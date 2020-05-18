@@ -3,6 +3,7 @@
 //SG2: JS - Create A New Pattern
 //SG3: JS - Step 3 - Show the Sequence to the User with Animations and Sounds
 //SG4: JS - Step 4 - Check Which Button is Pressed
+//SG5: JS - Step 5 - Add Sounds to Button Clicks
 
 
 //SG Step 2 (SG2) - Create a New patern
@@ -28,8 +29,9 @@ function nextSequence() {
   //SG3.2 Animate the selected button with flash (see Google/StackOverlow)
   $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
   //SG3.3 Play sound of the selected button
-  var audio = new Audio("sounds/" + randomChosenColour + ".mp3");
-  audio.play();
+
+  //SG5.4 Refactor Play Audio --> via function
+  playSound(randomChosenColour);
 
 }
 
@@ -45,6 +47,12 @@ $(".btn").click(function() {
     //console.log(userClickedPattern);
     
     });
+
+ //SG5.1, SG5.2, SG5.3 New function playSound(name)  
+ function playSound(name) {
+     var audio = new Audio("sounds/" + name + ".mp3");
+     audio.play();
+ } 
 
 
 
