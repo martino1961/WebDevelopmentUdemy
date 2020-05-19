@@ -7,6 +7,7 @@
 //SG6: JS - Step 6 - Add Animations to User Clicks
 //SG7: JS - Step 7 - Start the Game
 //SG8: JS - Step 8 - Check the User's Answer Against the Game Sequence
+//SG9: JS - Step 9 - Game Over
 
 
 //SG Step 2 (SG2) - Create a New patern
@@ -75,6 +76,16 @@ $(".btn").click(function() {
     }
     else {
         console.log("wrong");
+        //SG9.1 Play wrong.mp3 if the user got one of the answers wrong
+        playSound("wrong");
+        //SG9.2 Apply class "game-over" to the body and then remove it after 200 msec
+        $("body").addClass("game-over");
+        setTimeout(function() {
+            $("body").removeClass("game-over");
+        }, 200);
+
+        //SG9.3 Change <h1> to say "Game Over, Press Any Key to Restart" 
+        $("#level-title").text("Game Over, Press Any Key to Restart");
     }
  }
    
