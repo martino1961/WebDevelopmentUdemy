@@ -6,6 +6,7 @@
 //SG5: JS - Step 5 - Add Sounds to Button Clicks
 //SG6: JS - Step 6 - Add Animations to User Clicks
 //SG7: JS - Step 7 - Start the Game
+//SG8: JS - Step 8 - Check the User's Answer Against the Game Sequence
 
 
 //SG Step 2 (SG2) - Create a New patern
@@ -48,10 +49,41 @@ $(".btn").click(function() {
     
     //console.log(userClickedPattern);
     
+    playSound(userChosenColour);
+    animatePress(userChosenColour);
+     
+    //SG8.2 Call checkAnswer() after a user has clicked and chosen their answer, 
+    //      passing in the index of the last answer in the user's sequence.
+    checkAnswer(userClickedPattern.length-1);
+
     });
 
+ //SG8.1 New function checkAnswer()
+ function checkAnswer(currentLevel) {
+    //check if the most recent user answer is the same as the game pattern
+    //SG8.3 
+    if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
+        console.log("success");
+        //SG8.4 If  the user got the most recent answer right in step 3, 
+        //      then check that they have finished their sequence with another if statement.
+        if (userClickedPattern.length === gamePattern.length) {
+            //SG8.5 Call nextSequence() after a 1000 msec delay
+            setTimeout(function() {
+                nextSequence();
+            }, 1000);
+        }
+    }
+    else {
+        console.log("wrong");
+    }
+ }
+   
 //SG2.1 Create a new function nextSequence()
 function nextSequence() {
+  //SG8.6 Once nextSequence() is triggered, 
+  //      reset the userClickedPattern to an empty array ready for the next level.  
+  userClickedPattern = [];
+
   //SG7.4 Inside nextSequence(), 
   //      increase the level by 1 every time nextSequence() is called.
   level++;
@@ -96,5 +128,6 @@ function nextSequence() {
      }, 100);
  }
 
+ 
 
 
