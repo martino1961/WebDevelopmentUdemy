@@ -1,13 +1,14 @@
 //Simon Game - shortcut SG
-//SG1: HTML - add links to jQuery and JS
-//SG2: JS - Create A New Pattern
-//SG3: JS - Step 3 - Show the Sequence to the User with Animations and Sounds
-//SG4: JS - Step 4 - Check Which Button is Pressed
-//SG5: JS - Step 5 - Add Sounds to Button Clicks
-//SG6: JS - Step 6 - Add Animations to User Clicks
-//SG7: JS - Step 7 - Start the Game
-//SG8: JS - Step 8 - Check the User's Answer Against the Game Sequence
-//SG9: JS - Step 9 - Game Over
+//SG1: HTML - Step 1: Add links to jQuery and JS
+//SG2: JS -  Step 2:  Create A New Pattern
+//SG3: JS -  Step 3:  Show the Sequence to the User with Animations and Sounds
+//SG4: JS -  Step 4:  Check Which Button is Pressed
+//SG5: JS -  Step 5:  Add Sounds to Button Clicks
+//SG6: JS -  Step 6:  Add Animations to User Clicks
+//SG7: JS -  Step 7:  Start the Game
+//SG8: JS -  Step 8:  Check the User's Answer Against the Game Sequence
+//SG9: JS -  Step 9:  Game Over
+//SG10: JS - Step 10: Restart the Game
 
 
 //SG Step 2 (SG2) - Create a New patern
@@ -64,7 +65,8 @@ $(".btn").click(function() {
     //check if the most recent user answer is the same as the game pattern
     //SG8.3 
     if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
-        console.log("success");
+        //console.log("success");
+
         //SG8.4 If  the user got the most recent answer right in step 3, 
         //      then check that they have finished their sequence with another if statement.
         if (userClickedPattern.length === gamePattern.length) {
@@ -75,7 +77,8 @@ $(".btn").click(function() {
         }
     }
     else {
-        console.log("wrong");
+        //console.log("wrong");
+
         //SG9.1 Play wrong.mp3 if the user got one of the answers wrong
         playSound("wrong");
         //SG9.2 Apply class "game-over" to the body and then remove it after 200 msec
@@ -86,6 +89,9 @@ $(".btn").click(function() {
 
         //SG9.3 Change <h1> to say "Game Over, Press Any Key to Restart" 
         $("#level-title").text("Game Over, Press Any Key to Restart");
+
+        //SG10.2 Restart the game
+        startOver();
     }
  }
    
@@ -137,6 +143,14 @@ function nextSequence() {
      setTimeout(function() {
         $("#" + currentColor).removeClass("pressed");
      }, 100);
+ }
+
+ //SG10.1 New function "startOver()"
+ function startOver() {
+     //SG10.3 Clear variables: level, gamePattern, started
+     level = 0;
+     gamePattern = [];
+     started = false;
  }
 
  
