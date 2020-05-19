@@ -5,6 +5,7 @@
 //SG4: JS - Step 4 - Check Which Button is Pressed
 //SG5: JS - Step 5 - Add Sounds to Button Clicks
 //SG6: JS - Step 6 - Add Animations to User Clicks
+//SG7: JS - Step 7 - Start the Game
 
 
 //SG Step 2 (SG2) - Create a New patern
@@ -15,9 +16,49 @@ var gamePattern = [];
 //SG4.3 Create a new empty array with the name userClickedPattern
 var userClickedPattern = [];
 
+//SG7.1 - To check whether the game was started or not
+var started = false;
+//SG7.2 - Levels of the game --> start at 0
+var level = 0;
+
+ //SG7.3 Use jQuery to detect when a keyboard key has been pressed, 
+ //      when that happens for the first time, call nextSequence().
+ //      You'll need a way to keep track of whether if the game has started 
+ //      or not, so you only call nextSequence() on the first keypress.
+ $(document).keypress(function() {
+    if (!started) {
+        //the <h1> title starts out saying "Press a key to start"
+        //when the game has sterted --> change the title to say "Level 0" 
+        //HTML: <h1 id="level-title">Press A Key to Start</h1>
+        //--> select <h1> via id "level-title"
+        $("#level-title").text("Level " + level);
+        nextSequence();
+        started = true;
+    }
+});
+
+//SG4.1 Use jQuery to detect when any of the buttons are clicked and 
+//      trigger a handler function
+$(".btn").click(function() {
+    //SG4.2 Id of clicked button
+      var userChosenColour = $(this).attr("id");
+    
+    //SG4.4 Add the contents of userChosenColour to the end of userClickedPattern[]  
+    userClickedPattern.push(userChosenColour);
+    
+    //console.log(userClickedPattern);
+    
+    });
 
 //SG2.1 Create a new function nextSequence()
 function nextSequence() {
+  //SG7.4 Inside nextSequence(), 
+  //      increase the level by 1 every time nextSequence() is called.
+  level++;
+
+  //SG7.5 Inside nextSequence(), 
+  //      update the h1 with this change in the value of level.
+  $("#level-title").text("Level " + level);
 
   //SG2.2 Random numbers: 0 - 3
   var randomNumber = Math.floor(Math.random() * 4);
@@ -35,19 +76,6 @@ function nextSequence() {
   playSound(randomChosenColour);
 
 }
-
-//SG4.1 Use jQuery to detect when any of the buttons are clicked and 
-//      trigger a handler function
-$(".btn").click(function() {
-    //SG4.2 Id of clicked button
-      var userChosenColour = $(this).attr("id");
-    
-    //SG4.4 Add the contents of userChosenColour to the end of userClickedPattern[]  
-    userClickedPattern.push(userChosenColour);
-    
-    //console.log(userClickedPattern);
-    
-    });
 
  //SG5.1, SG5.2, SG5.3 New function playSound(name)  
  function playSound(name) {
@@ -67,5 +95,6 @@ $(".btn").click(function() {
         $("#" + currentColor).removeClass("pressed");
      }, 100);
  }
+
 
 
