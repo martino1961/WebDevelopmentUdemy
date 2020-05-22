@@ -1,0 +1,18 @@
+GitBash.exe
+ShortCuts:
+Ctrl+A --> Skip cursor to the begin of the command line
+Ctrl+E --> Skip cursor to the end of command line
+Arrow Up/Down --> list in the History of executed commands
+Ctrl+U --> delete/clear command line
+
+
+Unix commands:
+1) touch text.txt --> create file text.txt
+2) start text.txt --> open text.txt in Notepad.txt (app related to "txt" extension)
+3) start Code text.txt --> open text.txt in Visual Code ("Code.exe")
+4) start --> opens command-line-windo-window
+5) pwd --> print working direcory - where am I
+6) rm text1.txt --> remove/delete file text1.txt
+7) rm * --> delete all the files in the directory
+8) rm -r Direcory1/ --> delete a directory "Directory1" ("-r" --> directory)
+
