@@ -1,10 +1,9 @@
-//Section 18: Node.js: 236. How to use the Native Node Modules
+//Section 18: Node.js: 237. The NPM Package Manager and Installing
+// External Node Modules
+// npm - Node Package Manager - www.npmjs.com
 
-//Node.js API Reference: https://nodejs.org/en/docs/
+var superheroes = require("superheroes");
 
-//require --> To use such a module from Node.js API we have to add a module to index.js 
-//Adding 'fs' - FileSystem module
-const fs = require("fs");
-//Copy file1.txt to file2.txt
-//If file2.txt already exists, its content is rewritten by content of file1.txt
-fs.copyFileSync("file1.txt", "file2.txt");
+var mySuperHeroName = superheroes.random();
+
+console.log(mySuperHeroName);

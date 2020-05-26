@@ -21,3 +21,7 @@ How to reach Console (as in Browser-->Development_Tools-->Console):
   - .help     Print this help message
   - .load     Load JS from a file into the REPL session
   - .save     Save all evaluated commands in this REPL session to a file
+
+npm - Package Manager for External JS Modules
+www.npmjs.com
+
