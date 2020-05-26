@@ -2,7 +2,8 @@
 // External Node Modules
 // npm - Node Package Manager - www.npmjs.com
 
-var superheroes = require("superheroes");
+//Require - includes internal/External module
+var superheroes = require("superheroes");  
 var supervillains = require("supervillains");
 
 var mySuperHeroName = superheroes.random();

@@ -22,6 +22,22 @@ How to reach Console (as in Browser-->Development_Tools-->Console):
   - .load     Load JS from a file into the REPL session
   - .save     Save all evaluated commands in this REPL session to a file
 
+How to add external package to the project:
 npm - Package Manager for External JS Modules
 www.npmjs.com
+1) cd to_dir_where_index.js_is_located
+2) npm init
+ 2a) enter package name - name of project
+ 2b) all others - e.g. version - just ENTER, ENTER, ...
+ 2c) finally - package.json file is created with info (2a), (2b)
+ 3) Add external package:
+  3a) find package in www.npmjs.com - e.g. superheroes
+  3b) npm install superheroes --> install package superheroes 
+   3b1) installs dependent packages into the folder node_modules
+   3b2) writes dependences to the package.json file
+  3c) in index.js:
+    var superheroes = require("superheroes"); //require - includes internal/external module
+    var mySuperHeroName = superheroes.random(); //call module function 
+    console.log(mySuperHeroName); //display name given by module function
+ 4) node index.js --> run index.js 
 
