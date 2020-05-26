@@ -3,7 +3,10 @@
 // npm - Node Package Manager - www.npmjs.com
 
 var superheroes = require("superheroes");
+var supervillains = require("supervillains");
 
 var mySuperHeroName = superheroes.random();
+var mySuperVillainsName = supervillains.random();
 
-console.log(mySuperHeroName);
+console.log("Super Hero Name: " + mySuperHeroName);
+console.log("Super Vill Name: " + mySuperVillainsName);
