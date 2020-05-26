@@ -34,6 +34,10 @@ $(".startButton").click(function() {
     $("#level-title").text("Level " + level);
     nextSequence();
     started = true;
+
+  //ToDo:
+  //Center text "Start" on the button - CSS
+  //Hide StartButton until the game is NOT over
   }
 });
 
