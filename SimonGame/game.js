@@ -19,7 +19,17 @@ var userClickedPattern = [];
 var started = false;
 var level = 0;
 
+//Start Game on PC via any key on keyboard
 $(document).keypress(function() {
+  if (!started) {
+    $("#level-title").text("Level " + level);
+    nextSequence();
+    started = true;
+  }
+});
+
+//Start Game on MobilePhone via Start button
+$(".startButton").click(function() {
   if (!started) {
     $("#level-title").text("Level " + level);
     nextSequence();
