@@ -22,12 +22,13 @@ body {
   display: inline-block;
   height: 200px;
   width: 200px;
-  border: 10px solid black;
+  border: 10px solid whitesmoke;
   border-radius: 20%;
   background-color: aqua;
   font-size: 3rem;
   text-align: center; /* How to center text */
-  
+  /* vertical-align: middle; */
+  line-height: 3.7;
 }
 
 .btn {

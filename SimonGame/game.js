@@ -10,6 +10,10 @@
 //SG9: JS -  Step 9:  Game Over
 //SG10: JS - Step 10: Restart the Game
 
+ //27.05.2020 ToDo:
+  //How to distiguish if the app is launched from:
+  // PC or MobilePhone
+
 
 var buttonColours = ["red", "blue", "green", "yellow"];
 
@@ -31,13 +35,13 @@ $(document).keypress(function() {
 //Start Game on MobilePhone via Start button
 $(".startButton").click(function() {
   if (!started) {
+    //Hide Start button
+    $(".startButton").hide();
+
     $("#level-title").text("Level " + level);
     nextSequence();
     started = true;
 
-  //ToDo:
-  //Center text "Start" on the button - CSS
-  //Hide StartButton until the game is NOT over
   }
 });
 
@@ -63,7 +67,8 @@ function checkAnswer(currentLevel) {
     } else {
       playSound("wrong");
       $("body").addClass("game-over");
-      $("#level-title").text("Game Over, Press Any Key to Restart");
+    //  $("#level-title").text("Game Over, Press Any Key to Restart");
+      $("#level-title").text("Game Over, Press Start to Restart");
 
       setTimeout(function () {
         $("body").removeClass("game-over");
@@ -102,4 +107,7 @@ function startOver() {
   level = 0;
   gamePattern = [];
   started = false;
+ 
+   //Show Start button
+   $(".startButton").show();
 }
