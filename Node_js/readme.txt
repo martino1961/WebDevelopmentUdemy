@@ -41,3 +41,20 @@ www.npmjs.com
     console.log(mySuperHeroName); //display name given by module function
  4) node index.js --> run index.js 
 
+First server - with Express
+A) in CmdLine (GitBash):
+A1) mkdir my-server-express
+A2) cd my-server-express
+A3) touch server.js
+A4) npm init
+A5) npm install express
+B) in server.js:
+B1) const express = require("express");  //include express package
+B2) const app = express();  //express app
+B3) app.get("/", function(request, response){
+             respnd.send("Hello");
+    });  //"/" - slash represents homepage, app.get() - catch HTTP GET request
+B4) app.listen(); //add listener on port 3000 (3000 is for HTTP requests)
+
+ 
+
