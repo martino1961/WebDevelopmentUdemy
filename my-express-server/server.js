@@ -1,5 +1,8 @@
 //Section 19: Express.js with Node.js - 242. Handling Requests and Responses: the GET Request
 
+//1) start server: in CmdLine: node server.js
+//2) in browser: localhost:3000
+
 //Include package express
 const express = require("express");
 //Express app
@@ -9,7 +12,7 @@ const app = express();
 //app.get() - catch GET request and send the response (via callback function)
 app.get("/", function(request, response){
    // console.log(request);
-   response.send("Hello!");  //Sends "Hello!" to the browser
+   response.send("<h1>Hello!</h1>");  //Sends "Hello!" to the browser
 });
 
 //port 3000 - for HTTP request
