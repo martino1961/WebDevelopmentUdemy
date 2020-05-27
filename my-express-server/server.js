@@ -8,11 +8,11 @@ const express = require("express");
 //Express app
 const app = express();
 
-// "/" - slash represents homepage
-//app.get() - catch GET request and send the response (via callback function)
-app.get("/", function(request, response){
-   // console.log(request);
-   response.send("<h1>Hello!</h1>");  //Sends "Hello!" to the browser
+//Shortcut: 
+// req - for Request
+// res - for Response 
+app.get("/", function(req, res){
+   res.send("<h1>Hello!</h1>");  //Sends "Hello!" to the browser
 });
 
 //port 3000 - for HTTP request
