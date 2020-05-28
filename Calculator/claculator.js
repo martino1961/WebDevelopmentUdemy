@@ -25,11 +25,18 @@ app.get("/", function(req, res){
 
 //POST "/" - Catch POST to route "/"
 app.post("/", function(req, res){
-    console.log(req.body);
-    console.log("Number 1: " + req.body.num1);
-    console.log("Number 2: " + req.body.num2);
+    //console.log(req.body);
+    //console.log("Number 1: " + req.body.num1); //"num1" is taken from <input... name="num1" ...>
+    //console.log("Number 2: " + req.body.num2); //"num2" is taken from <input... name="num2" ...>
 
-    res.send("Thanks for that");
+    //var num1 = req.body.num1;  //returns text
+    //var num2 = req.body.num2;  //returns text
+    var num1 =  Number(req.body.num1);  //conversion to number
+    var num2 =  Number(req.body.num2);  //conversion to number
+
+    var result = num1 + num2;
+
+    res.send("The result of the calculation is " + result);
 });
 
 app.listen(3000, function() {
