@@ -1,4 +1,5 @@
 //Section 19: Express.js with Node.js - 244. Understanding and Working with Routes
+// Automatical restart of server via nodemon - in CmdLine: nodemon server.js
 
 //Include package express
 const express = require("express");
@@ -17,7 +18,12 @@ app.get("/contact", function(req, res){
 
 //GET "/about" page
 app.get("/about", function(req, res){
-    res.send("My name is <h1>Martin</h1> and I love <h2>swimming, walking and coding.</h2>");
+    res.send("My name is <h1>Martin</h1> and I love wine and code.");
+});
+
+//GET "/hobbies" page
+app.get("/hobbies", function(req, res){
+    res.send("<h2>My hobbies</h2><ul><li>swimming</li><li>walking</li><li>coding</li></ul>");
 });
 
 //port 3000 - for HTTP request

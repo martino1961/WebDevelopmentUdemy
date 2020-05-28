@@ -42,6 +42,7 @@ www.npmjs.com
  4) node index.js --> run index.js 
 
 First server - with Express
+www.expressjs.com
 A) in CmdLine (GitBash):
 A1) mkdir my-server-express
 A2) cd my-server-express
@@ -55,6 +56,16 @@ B3) app.get("/", function(request, response){
              respnd.send("Hello");
     });  //"/" - slash represents homepage, app.get() - catch HTTP GET request
 B4) app.listen(); //add listener on port 3000 (3000 is for HTTP requests)
+
+nodemon - tility that will monitor for any changes in your source and automatically restart your server
+https://nodemon.io/
+Install:
+A) in CmdLine (GitBash) - in whichever directory:
+A1) npm install -g nodemon
+A2) cd to dir, where is server.js - e.g. cd my-server-express
+A3) nodemon server.js
+
+
 
  
 
