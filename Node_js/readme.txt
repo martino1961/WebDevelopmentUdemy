@@ -48,7 +48,7 @@ A1) mkdir my-server-express
 A2) cd my-server-express
 A3) touch server.js
 A4) npm init
-A5) npm install express
+A5) npm install express --> see package.json "dependencies" section
 B) in server.js:
 B1) const express = require("express");  //include express package
 B2) const app = express();  //express app
@@ -57,7 +57,7 @@ B3) app.get("/", function(request, response){
     });  //"/" - slash represents homepage, app.get() - catch HTTP GET request
 B4) app.listen(); //add listener on port 3000 (3000 is for HTTP requests)
 
-nodemon - tility that will monitor for any changes in your source and automatically restart your server
+nodemon - utility that will monitor for any changes in your source and automatically restart your server
 https://nodemon.io/
 Install:
 A) in CmdLine (GitBash) - in whichever directory:
@@ -67,6 +67,43 @@ A3) nodemon server.js
 if (A1) doesn't work:
 B1) make sure you are logged in to your PC with admin privilleges
 B2) sudo npm install -g nodemon --> sudo will ask for your Windows password
+
+HTTP Status codes:
+https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+1xx Informational response
+2xx Success
+3xx Redirection
+4xx Client errors
+5xx Server errors
+
+How to parse HTML body Request - body-parser:
+1) npm install body-parser --> see package.json "dependencies" section
+2) in JS file:
+const express = require("express");
+const bodyParser = require("body-parser");
+const app = express();
+//Parsing HTML Request
+//bodyParser.urlencoded --> for <form>
+//extended: true --> allows Nested Object
+app.use(bodyParser.urlencoded({extended: true}));
+
+//POST "/" - Catch POST to route "/"
+app.post("/", function(req, res){
+    console.log(req.body);
+    console.log("Number 1: " + req.body.num1);
+    console.log("Number 2: " + req.body.num2);
+    
+    res.send("Thanks for that");
+});
+
+app.listen(3000, function() {
+    console.log("Server started on port 3000");
+});
+
+
+
+
+
 
 
 
