@@ -64,6 +64,9 @@ A) in CmdLine (GitBash) - in whichever directory:
 A1) npm install -g nodemon
 A2) cd to dir, where is server.js - e.g. cd my-server-express
 A3) nodemon server.js
+if (A1) doesn't work:
+B1) make sure you are logged in to your PC with admin privilleges
+B2) sudo npm install -g nodemon --> sudo will ask for your Windows password
 
 
 
