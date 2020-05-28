@@ -1,11 +1,13 @@
-//Section 19: 246. Calculator Setup Challenge
+//Section 19: 246. Calculator app
 
 const express = require("express");
 const app = express();
 
-//GET "/" - GET Homepage (Route)
+//GET "/" - GET Homepage (Route "/")
 app.get("/", function(req, res){
-    res.send("<h2>Hello world</h2>");
+    //__dirname - Current directory
+    //console.log(__dirname);
+    res.sendFile(__dirname + "/index.html");  
 });
 
 app.listen(3000, function() {
