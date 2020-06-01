@@ -48,7 +48,7 @@ A1) mkdir my-server-express
 A2) cd my-server-express
 A3) touch server.js
 A4) npm init
-A5) npm install express --> see package.json "dependencies" section
+A5) npm install express --> see package.json "dependencies" section (tiez funguje: npm i express)
 B) in server.js:
 B1) const express = require("express");  //include express package
 B2) const app = express();  //express app

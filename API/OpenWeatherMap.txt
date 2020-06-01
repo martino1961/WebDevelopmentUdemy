@@ -1,0 +1,2 @@
+Appid: 40b476b839899e1f0d9cab8f04a2c69e
+GET api.openweathermap.org/data/2.5/weather?q=Zilina&appid=40b476b839899e1f0d9cab8f04a2c69e
