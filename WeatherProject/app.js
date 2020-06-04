@@ -1,4 +1,5 @@
 //Section 20 - API: 261. Using Body Parser to Parse POST Requests to the Server
+// Set Encoding UTF-8 for res.write() - e.g. for Slovak language
 
 const express = require("express");
 const https = require("https");
@@ -17,9 +18,10 @@ app.post("/", function (req, res) {
   const apiKey = "40b476b839899e1f0d9cab8f04a2c69e"; //My (free of charge) CurrentWeather API Key
   const city = req.body.cityName; //"Zilina";
   const openWeatherPage = "https://api.openweathermap.org/data/2.5/weather";
-  const language = "en";
+  //const language = "en";
+  const language = "sk";
   const unit = "metric";
-  
+
   //const url = "https://api.openweathermap.org/data/2.5/weather?q=Zilina&appid=40b476b839899e1f0d9cab8f04a2c69e&units=metric&lang=en";
   const url = openWeatherPage + "?q=" + city + "&lang=" + language + "&units=" + unit + "&appid=" + apiKey;
 
@@ -34,8 +36,27 @@ app.post("/", function (req, res) {
       const icon = weatherData.weather[0].icon;
       const imageURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
 
-      res.write("<p><h2> Weather description: " + weatherDescription + "</h2></p>");
-      res.write("<p><h1>Current temperature in " + city + " is " + temperature + " degrees Celcius</h1></p>");
+      var msg1 = "Current temperature in ";
+      var msg2 = " is ";
+      var msg3 = " degrees Celcius.";
+
+      switch (language) {
+          case "sk":
+              msg1 = "Aktuálna teplota v meste ";
+              msg2 = " je ";
+              msg3 = " stupňov Celzia.";
+              break;
+      
+          default:
+              break;
+      } 
+
+      //Set UTF-8 Encoding (needed for Slovak language)
+      //res.write() needs to be set the Encoding
+      res.set({ 'content-type': 'text/html; charset=utf-8' });
+
+      res.write("<p><h1>" + msg1 + city + msg2 + temperature + msg3 + "</h1></p>");
+      res.write("<p><h2>" + weatherDescription + "</h2></p>");
       res.write("<img src=" + imageURL + ">");
       res.send();
     });
