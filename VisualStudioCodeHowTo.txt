@@ -1,3 +1,5 @@
 (un)Comment Block of lines:
 Ctrl+K+C --> Comment
 Ctrl+K+U --> UnComment
+
+Ctrl+Shift+L --> select all occurencies (e.g. for mass replacement)
