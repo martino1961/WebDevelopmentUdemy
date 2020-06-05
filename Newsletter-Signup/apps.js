@@ -1,4 +1,4 @@
-//Sec20: 264. Posting Data to Mailchimp's Servers via their API
+//Sec20: 265. Adding Success and Failure Pages
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -54,12 +54,22 @@ app.post("/", function(req, res) {
     const options = {
         method: "POST",
         //auth: "anyName:ApiKey"
-        auth: "martin1:b4c51794603841570aed76876807ab7c-us10"
+        auth: "martin1:XXXb4c51794603841570aed76876807ab7c-us10"
     };
 
     //send POST request to MailChimp
     const request = https.request(url, options, function(response) {
         //response from MailChimp
+
+        //Check response.StatusCode
+         if (response.statusCode === 200) {
+            //res.send("Successfully subscribed!");
+            res.sendFile(__dirname + "/success.html");
+        } else {
+            //res.send("There was an error with subscribing, please try again!");
+            res.sendFile(__dirname + "/failure.html");
+        } 
+
         response.on("data", function(data) {
             console.log(JSON.parse(data));
         })
@@ -72,7 +82,10 @@ app.post("/", function(req, res) {
 
 })
 
-
+//Redirect from Fialure.html to the starting page ("/")
+app.post("/failure", function(req, res) {
+    res.redirect("/");
+})
 
 app.listen(3000, function() {
     console.log("Server is running on the port 3000.");
