@@ -1,4 +1,5 @@
-//Sec20: 265. Adding Success and Failure Pages
+//Sec20: 266. Deploying Your Server with Heroku
+
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -87,12 +88,9 @@ app.post("/failure", function(req, res) {
     res.redirect("/");
 })
 
-app.listen(3000, function() {
+//Change port 3000 to "heroku or 3000"
+app.listen(process.env.PORT || 3000, function() {
     console.log("Server is running on the port 3000.");
 })
 
-// Mailchimp API key
-// b4c51794603841570aed76876807ab7c-us10
 
-// Mailchimp List Id
-// 2daa2187b4

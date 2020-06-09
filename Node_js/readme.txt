@@ -100,6 +100,36 @@ app.listen(3000, function() {
     console.log("Server started on port 3000");
 });
 
+Deploying Static WebSites - GitHub
+Deploying Dynamic WebSites (Client + Server) - heroku
+1) install heroku - www.heroku.com --> Docu --> Inntroduction --> Set-up
+2) gitBash: heroku login --> heroku: Press any key to open up the browser to login or q to exit --> browser is opened You are logged in --> You can close the browser 
+3) heroku version --> heroku/7.42.1 win32-x64 node-v12.16.2
+4) check that node.js version is > 8:
+  gitBash: node --version --> v12.16.3
+5) check npm is installed - we will check the npm version - if it gives version, then it is installed
+  git Bash: npm --version --> 6.14.4
+6) git --version --> git version 2.16.2.windows.1
+7) on www.heroku Getting started site Set-Up: click on button "I have installed the Heroku on CLI" --> navigates me to the next step "Prepare the app"
+8) change the port 3000 in listener in app.js from 3000 to "heroku or 3000" (process.env.PORT || 3000)
+9) define a Procfile <-- how to launch our app: 
+  web: node index.js --> in our case: 
+  9a) gitBash: 
+    cd to_ourAppDirectory
+    touch Procfile <-- Caution: filename without any extension!!! e.g. !!! NO .txt !!!
+  9b) visualCodeStudio - open file Procfile and write:
+    web: node app.js  
+10) save our work to git:
+  10a) gitBash:
+    git status
+    git add --all
+    git commit -m "Commit message"
+11) on www.heroku Getting started site Prepare the app: Click on button "I cloned the app source code" --> navigates to the next step "Deploy the app"
+12) Deploy the app:
+    
+
+
+
 
 
 
