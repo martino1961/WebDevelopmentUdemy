@@ -100,8 +100,8 @@ app.listen(3000, function() {
     console.log("Server started on port 3000");
 });
 
-Deploying Static WebSites - GitHub
-Deploying Dynamic WebSites (Client + Server) - heroku
+Deploying Static WebSites --> GitHub
+Deploying Dynamic WebSites (Client + Server) --> heroku
 1) install heroku - www.heroku.com --> Docu --> Inntroduction --> Set-up
 2) gitBash: heroku login --> heroku: Press any key to open up the browser to login or q to exit --> browser is opened You are logged in --> You can close the browser 
 3) heroku version --> heroku/7.42.1 win32-x64 node-v12.16.2
@@ -120,13 +120,30 @@ Deploying Dynamic WebSites (Client + Server) - heroku
   9b) visualCodeStudio - open file Procfile and write:
     web: node app.js  
 10) save our work to git:
-  10a) gitBash:
+  10a) visualCodeStudio:
+    git init
     git status
-    git add --all
+    git add --all (git add .)
     git commit -m "Commit message"
 11) on www.heroku Getting started site Prepare the app: Click on button "I cloned the app source code" --> navigates to the next step "Deploy the app"
 12) Deploy the app:
-    
+  12a) Create new app - gitBash:
+    heroku create --> if everything OK:
+     Creating app... done, still-oasis-19631
+     https://still-oasis-19631.herokuapp.com/ | https://git.heroku.com/still-oasis-19631.git
+  12b) click on link https://still-oasis-19631.herokuapp.com/ and we can see"
+       Heroku | Welcome to your new app!
+       Refer to the documentation if you need help deploying.
+13) Now deploy your code:
+  13a) visualCodeStudio:
+     git push heroku master
+Error!!!
+fatal: 'heroku' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
 
 
 
