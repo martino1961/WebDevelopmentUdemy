@@ -122,7 +122,6 @@ Deploying Dynamic WebSites (Client + Server) --> heroku
 10) save our work to git:
   10a) visualCodeStudio:
     git init
-    git status
     git add --all (git add .)
     git commit -m "Commit message"
 11) on www.heroku Getting started site Prepare the app: Click on button "I cloned the app source code" --> navigates to the next step "Deploy the app"

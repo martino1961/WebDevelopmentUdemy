@@ -55,7 +55,7 @@ app.post("/", function(req, res) {
     const options = {
         method: "POST",
         //auth: "anyName:ApiKey"
-        auth: "martin1:XXXb4c51794603841570aed76876807ab7c-us10"
+        auth: "martin1:b4c51794603841570aed76876807ab7c-us10"
     };
 
     //send POST request to MailChimp
